@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--AUv3 Filter Demo View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" userLabel="AUv3 Filter Demo View Controller" customClass="AUv3FilterDemoViewController" customModule="AUv3FilterFramework" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="u2v-qu-mbu"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="compactView" destination="yB1-wT-gIv" id="QGq-eq-aeq"/>
+                        <outlet property="expandedView" destination="MEB-KI-Ebt" id="GSk-xT-mK1"/>
+                        <outlet property="filterView" destination="ToJ-H4-LsK" id="3tH-Bf-XNg"/>
+                        <outlet property="frequencyTextField" destination="J3v-Kf-M2Z" id="uiK-7g-BUA"/>
+                        <outlet property="resonanceTextField" destination="w3u-Wi-IHG" id="OAg-Jz-6oK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="yB1-wT-gIv" userLabel="Compact View">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hRD-Ka-thN">
+                            <rect key="frame" x="20" y="10" width="360" height="80"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="MT7-NJ-WFe">
+                                    <rect key="frame" x="0.0" y="10.5" width="143" height="59"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cutoff Frequency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXy-SI-4og">
+                                            <rect key="frame" x="0.0" y="0.0" width="133" height="20.5"/>
+                                            <color key="tintColor" name="FillColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="FillColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resonance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lp-Cx-7iK">
+                                            <rect key="frame" x="0.0" y="38.5" width="84.5" height="20.5"/>
+                                            <color key="tintColor" name="FillColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="FillColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Bm3-vC-dVN">
+                                    <rect key="frame" x="151" y="0.0" width="180" height="80"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J3v-Kf-M2Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="34"/>
+                                            <color key="tintColor" name="FillColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="180" id="VEa-iz-gbx"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="frequencyUpdated:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="i1u-ky-l3L"/>
+                                            </connections>
+                                        </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w3u-Wi-IHG">
+                                            <rect key="frame" x="0.0" y="48" width="180" height="32"/>
+                                            <color key="tintColor" name="FillColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="resonanceUpdated:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="vZ2-hE-dx7"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="04v-xp-hoZ">
+                                    <rect key="frame" x="339" y="8" width="21" height="64"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Au5-Mh-6x7">
+                                            <rect key="frame" x="0.0" y="0.0" width="21" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.26379796859999999" green="0.26379007100000001" blue="0.2637945116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXi-LR-qee">
+                                            <rect key="frame" x="0.0" y="43.5" width="21" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.26379796859999999" green="0.26379007100000001" blue="0.2637945116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="tintColor" name="FillColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="Q1B-ff-IQx"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="usX-Lj-c1G"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" red="0.81717365980000001" green="0.27958369259999999" blue="0.25095051530000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="usX-Lj-c1G" firstAttribute="trailing" secondItem="hRD-Ka-thN" secondAttribute="trailing" constant="20" id="2aD-ua-VVm"/>
+                        <constraint firstItem="hRD-Ka-thN" firstAttribute="top" secondItem="usX-Lj-c1G" secondAttribute="top" constant="10" id="Bd9-PS-xoP"/>
+                        <constraint firstItem="hRD-Ka-thN" firstAttribute="leading" secondItem="usX-Lj-c1G" secondAttribute="leading" constant="20" id="j9N-Zg-jhS"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" id="MEB-KI-Ebt" userLabel="Expanded View">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter Demo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4N-fX-fGI" userLabel="Filter Demo Label">
+                            <rect key="frame" x="455.5" y="0.0" width="113" height="25.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                            <color key="textColor" systemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ToJ-H4-LsK" customClass="FilterView" customModule="AUv3FilterFramework">
+                            <rect key="frame" x="20" y="33.5" width="984" height="1312.5"/>
+                            <viewLayoutGuide key="safeArea" id="lAC-9u-uun"/>
+                        </view>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="x78-hV-rhC"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="ToJ-H4-LsK" secondAttribute="bottom" constant="20" id="48W-aZ-qI1"/>
+                        <constraint firstItem="F4N-fX-fGI" firstAttribute="top" secondItem="MEB-KI-Ebt" secondAttribute="topMargin" id="5P2-Q3-jR4"/>
+                        <constraint firstItem="ToJ-H4-LsK" firstAttribute="top" secondItem="F4N-fX-fGI" secondAttribute="bottom" constant="8" id="BFW-ZF-qOH"/>
+                        <constraint firstItem="ToJ-H4-LsK" firstAttribute="leading" secondItem="MEB-KI-Ebt" secondAttribute="leading" constant="20" id="Ft6-Jg-cLh"/>
+                        <constraint firstAttribute="trailing" secondItem="ToJ-H4-LsK" secondAttribute="trailing" constant="20" id="GU1-Bw-eE4"/>
+                        <constraint firstItem="F4N-fX-fGI" firstAttribute="centerX" secondItem="MEB-KI-Ebt" secondAttribute="centerX" id="Hoz-iw-aar"/>
+                    </constraints>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="137.58992805755395" y="133.81294964028777"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="FillColor">
+            <color red="0.37200000882148743" green="0.74099999666213989" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

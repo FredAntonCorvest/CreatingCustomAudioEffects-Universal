@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad10_5" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="AUv3Filter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YiJ-1a-ELQ" userLabel="Controls Header View">
+                                <rect key="frame" x="20" y="0.0" width="1072" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="firstBaseline" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7fx-rV-Ws4" userLabel="Buttons Container">
+                                        <rect key="frame" x="443" y="0.0" width="186" height="39"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzZ-pe-UL7">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="39"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="tintColor" name="FillColor"/>
+                                                <state key="normal" title="Play">
+                                                    <color key="titleColor" name="FillColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="togglePlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kt8-zh-HcD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycR-sk-SUr" userLabel="Toggle Views Button">
+                                                <rect key="frame" x="60" y="0.0" width="126" height="39"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="Toggle Views">
+                                                    <color key="titleColor" name="FillColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="toggleView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jL5-4Z-KqB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cutoff" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZT5-00-ojX" userLabel="Cutoff Label">
+                                        <rect key="frame" x="0.0" y="59" width="84.5" height="20.5"/>
+                                        <color key="tintColor" name="FillColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="FillColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="9rt-TL-68F">
+                                        <rect key="frame" x="197" y="54.5" width="877" height="31"/>
+                                        <color key="tintColor" name="FillColor"/>
+                                        <connections>
+                                            <action selector="cutoffSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Nhz-TD-4id"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resonance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XyD-hC-vsa" userLabel="Resonance Label">
+                                        <rect key="frame" x="0.0" y="99.5" width="84.5" height="20.5"/>
+                                        <color key="tintColor" name="FillColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="FillColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="byn-dA-uK7">
+                                        <rect key="frame" x="91" y="93" width="100" height="34"/>
+                                        <color key="tintColor" name="FillColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="593-fC-fN7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-20" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="qNn-m8-7L4">
+                                        <rect key="frame" x="197" y="95" width="877" height="31"/>
+                                        <color key="tintColor" name="FillColor"/>
+                                        <connections>
+                                            <action selector="resonanceSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="8jz-TF-BDa"/>
+                                        </connections>
+                                    </slider>
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qnu-xa-K9r">
+                                        <rect key="frame" x="91" y="52.5" width="100" height="34"/>
+                                        <color key="tintColor" name="FillColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ZT5-00-ojX" firstAttribute="leading" secondItem="YiJ-1a-ELQ" secondAttribute="leading" id="2Kf-Hk-Z3u"/>
+                                    <constraint firstItem="ZT5-00-ojX" firstAttribute="trailing" secondItem="XyD-hC-vsa" secondAttribute="trailing" id="8ER-LN-L0k"/>
+                                    <constraint firstItem="qNn-m8-7L4" firstAttribute="leading" secondItem="byn-dA-uK7" secondAttribute="trailing" constant="8" id="BZR-Yf-zFq"/>
+                                    <constraint firstAttribute="height" constant="150" id="CYq-xS-bxJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="9rt-TL-68F" secondAttribute="trailing" id="CeX-nl-VyP"/>
+                                    <constraint firstItem="XyD-hC-vsa" firstAttribute="leading" secondItem="YiJ-1a-ELQ" secondAttribute="leading" id="ENE-bm-4wJ"/>
+                                    <constraint firstItem="7fx-rV-Ws4" firstAttribute="top" secondItem="YiJ-1a-ELQ" secondAttribute="top" id="TjZ-vk-2j6"/>
+                                    <constraint firstItem="byn-dA-uK7" firstAttribute="centerY" secondItem="XyD-hC-vsa" secondAttribute="centerY" id="UCZ-9v-giK"/>
+                                    <constraint firstAttribute="trailing" secondItem="qNn-m8-7L4" secondAttribute="trailing" id="Wlz-Rn-3PA"/>
+                                    <constraint firstItem="qnu-xa-K9r" firstAttribute="centerY" secondItem="ZT5-00-ojX" secondAttribute="centerY" id="dfT-Hy-VTW"/>
+                                    <constraint firstItem="qnu-xa-K9r" firstAttribute="width" secondItem="byn-dA-uK7" secondAttribute="width" id="dif-CH-eOs"/>
+                                    <constraint firstItem="qnu-xa-K9r" firstAttribute="leading" secondItem="byn-dA-uK7" secondAttribute="leading" id="e8m-qr-KGG"/>
+                                    <constraint firstItem="7fx-rV-Ws4" firstAttribute="centerX" secondItem="YiJ-1a-ELQ" secondAttribute="centerX" id="gty-7P-wq4"/>
+                                    <constraint firstAttribute="bottom" secondItem="XyD-hC-vsa" secondAttribute="bottom" constant="30" id="jCN-Pa-0TH"/>
+                                    <constraint firstItem="byn-dA-uK7" firstAttribute="leading" secondItem="XyD-hC-vsa" secondAttribute="trailing" constant="6.5" id="kgm-Gt-wbZ"/>
+                                    <constraint firstItem="qNn-m8-7L4" firstAttribute="leading" secondItem="byn-dA-uK7" secondAttribute="trailing" constant="8" id="leI-KC-dDd"/>
+                                    <constraint firstItem="9rt-TL-68F" firstAttribute="centerY" secondItem="qnu-xa-K9r" secondAttribute="centerY" id="mF6-bz-d1S"/>
+                                    <constraint firstItem="XyD-hC-vsa" firstAttribute="top" secondItem="ZT5-00-ojX" secondAttribute="bottom" constant="20" id="smI-lK-mie"/>
+                                    <constraint firstItem="ZT5-00-ojX" firstAttribute="top" secondItem="7fx-rV-Ws4" secondAttribute="bottom" constant="20" id="xBA-Zn-WPe"/>
+                                    <constraint firstItem="qNn-m8-7L4" firstAttribute="centerY" secondItem="XyD-hC-vsa" secondAttribute="centerY" id="ySU-aF-U4M"/>
+                                    <constraint firstItem="9rt-TL-68F" firstAttribute="leading" secondItem="qNn-m8-7L4" secondAttribute="leading" id="zvK-KJ-p9j"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68k-M7-cHK">
+                                <rect key="frame" x="20" y="170" width="1072" height="656"/>
+                                <color key="tintColor" name="FillColor"/>
+                                <connections>
+                                    <segue destination="d3W-X0-TKr" kind="embed" id="weX-Mb-Asn"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.81717365980148315" green="0.27958369255065918" blue="0.25095051527023315" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="68k-M7-cHK" firstAttribute="top" secondItem="YiJ-1a-ELQ" secondAttribute="bottom" constant="20" id="1vw-jJ-l1v"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YiJ-1a-ELQ" secondAttribute="trailing" constant="20" id="J1w-OT-736"/>
+                            <constraint firstItem="68k-M7-cHK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JSr-xN-3FD"/>
+                            <constraint firstItem="YiJ-1a-ELQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Xaf-2D-B6b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="68k-M7-cHK" secondAttribute="bottom" constant="8" id="f0O-Cd-IJE"/>
+                            <constraint firstItem="YiJ-1a-ELQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gcb-Ax-44p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="68k-M7-cHK" secondAttribute="trailing" constant="20" id="pxu-xY-NpT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="68k-M7-cHK" id="Vne-5l-42G"/>
+                        <outlet property="cutoffSlider" destination="9rt-TL-68F" id="nBt-9A-pnM"/>
+                        <outlet property="cutoffTextField" destination="qnu-xa-K9r" id="6TD-Od-5ao"/>
+                        <outlet property="playButton" destination="tzZ-pe-UL7" id="Yxx-Rt-URy"/>
+                        <outlet property="resonanceSlider" destination="qNn-m8-7L4" id="l3b-91-eiR"/>
+                        <outlet property="resonanceTextField" destination="byn-dA-uK7" id="9U3-4m-y3R"/>
+                        <outlet property="toggleButton" destination="ycR-sk-SUr" id="ltu-bg-AFP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="68.525179856115116" y="646.76258992805765"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RPJ-4g-mch">
+            <objects>
+                <viewController id="d3W-X0-TKr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sss-Fn-Ywk">
+                        <rect key="frame" x="0.0" y="0.0" width="1072" height="656"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="pwW-eh-dp0"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D2O-tw-VKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="791" y="720"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="FillColor">
+            <color red="0.37200000882148743" green="0.74099999666213989" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
